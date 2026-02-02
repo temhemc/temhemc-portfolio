@@ -30,9 +30,9 @@ export default function Home() {
 
         {/* About Section */}
         <section id="hakkinda" className="py-12 bg-gray-100">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Hakkında</h2>
-            <p className="text-gray-600 max-w-3xl">
+            <p className="text-gray-600 max-w-3xl mx-auto">
               temhemc, kripto para piyasalarını takip etmenizi sağlayan basit ve kullanıcı dostu bir platformdur.
               Bitcoin ve Ethereum gibi popüler kripto paraların anlık fiyat verilerini CoinGecko API üzerinden alarak
               size sunuyoruz. Veriler her 60 saniyede bir otomatik olarak güncellenir.

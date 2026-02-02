@@ -15,7 +15,11 @@ interface CryptoData {
     image: string
 }
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
+const fetcher = (url: string) =>
+    fetch(url).then((res) => {
+        if (!res.ok) throw new Error(`API error: ${res.status}`)
+        return res.json()
+    })
 
 export function CryptoList() {
     const { data, error, isLoading, mutate } = useSWR<CryptoData[]>(
@@ -24,6 +28,8 @@ export function CryptoList() {
         {
             refreshInterval: 60000,
             revalidateOnFocus: true,
+            errorRetryInterval: 10000,
+            dedupingInterval: 30000,
         }
     )
 
